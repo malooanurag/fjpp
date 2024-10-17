@@ -1,0 +1,43 @@
+package p1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Sortarray {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // 1. Sorting an Array of Integers
+        System.out.print("Enter the number of integers: ");
+        int n = scanner.nextInt();
+        int[] intArray = new int[n];
+
+        System.out.println("Enter " + n + " integers:");
+        for (int i = 0; i < n; i++) {
+            intArray[i] = scanner.nextInt();
+        }
+
+        // Sorting the array of integers
+        Arrays.sort(intArray);
+        System.out.println("Sorted array of integers: " + Arrays.toString(intArray));
+
+        // 2. Sorting an Array of Names
+        System.out.print("\nEnter the number of names: ");
+        int m = scanner.nextInt();
+        String[] nameArray = new String[m];
+        scanner.nextLine(); // Consume the newline left after nextInt()
+
+        System.out.println("Enter " + m + " names:");
+        for (int i = 0; i < m; i++) {
+            nameArray[i] = scanner.nextLine();
+        }
+
+        // Sorting the array of names
+        Arrays.sort(nameArray);
+        System.out.println("Sorted array of names: " + Arrays.toString(nameArray));
+
+        scanner.close();
+    }
+}
+
+

@@ -1,0 +1,134 @@
+package p1;
+
+import java.util.Scanner;
+
+class Playyer {
+    protected String name;
+    protected int age;
+    protected String team;
+
+    // Constructor
+    public Playyer(String name, int age, String team) {
+        this.name = name;
+        this.age = age;
+        this.team = team;
+    }
+
+    // Method to display player details
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Team: " + team);
+    }
+}
+
+class CricketPlayer extends Playyer {
+    private int runsScored;
+
+    // Constructor
+    public CricketPlayer(String name, int age, String team, int runsScored) {
+        super(name, age, team);
+        this.runsScored = runsScored;
+    }
+
+    // Method to display cricket player details
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Runs Scored: " + runsScored);
+    }
+}
+
+class FootballPlayer extends Playyer {
+    private int goalsScored;
+
+    // Constructor
+    public FootballPlayer(String name, int age, String team, int goalsScored) {
+        super(name, age, team);
+        this.goalsScored = goalsScored;
+    }
+
+    // Method to display football player details
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Goals Scored: " + goalsScored);
+    }
+}
+
+class HockeyPlayer extends Playyer {
+    private int goalsScored;
+
+    // Constructor
+    public HockeyPlayer(String name, int age, String team, int goalsScored) {
+        super(name, age, team);
+        this.goalsScored = goalsScored;
+    }
+
+    // Method to display hockey player details
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Goals Scored: " + goalsScored);
+    }
+}
+
+public class SportsInheritance {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input for Cricket Player
+        System.out.print("Enter Cricket Player Name: ");
+        String cricketName = scanner.nextLine();
+        System.out.print("Enter Cricket Player Age: ");
+        int cricketAge = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter Cricket Player Team: ");
+        String cricketTeam = scanner.nextLine();
+        System.out.print("Enter Runs Scored by Cricket Player: ");
+        int runsScored = scanner.nextInt();
+
+        CricketPlayer cp = new CricketPlayer(cricketName, cricketAge, cricketTeam, runsScored);
+
+        // Input for Football Player
+        System.out.print("Enter Football Player Name: ");
+        scanner.nextLine(); // Consume newline
+        String footballName = scanner.nextLine();
+        System.out.print("Enter Football Player Age: ");
+        int footballAge = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter Football Player Team: ");
+        String footballTeam = scanner.nextLine();
+        System.out.print("Enter Goals Scored by Football Player: ");
+        int footballGoals = scanner.nextInt();
+
+        FootballPlayer fp = new FootballPlayer(footballName, footballAge, footballTeam, footballGoals);
+
+        // Input for Hockey Player
+        System.out.print("Enter Hockey Player Name: ");
+        scanner.nextLine(); // Consume newline
+        String hockeyName = scanner.nextLine();
+        System.out.print("Enter Hockey Player Age: ");
+        int hockeyAge = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter Hockey Player Team: ");
+        String hockeyTeam = scanner.nextLine();
+        System.out.print("Enter Goals Scored by Hockey Player: ");
+        int hockeyGoals = scanner.nextInt();
+
+        HockeyPlayer hp = new HockeyPlayer(hockeyName, hockeyAge, hockeyTeam, hockeyGoals);
+
+        // Display Player Information
+        System.out.println("\nCricket Player Info:");
+        cp.displayInfo();
+        System.out.println();
+
+        System.out.println("Football Player Info:");
+        fp.displayInfo();
+        System.out.println();
+
+        System.out.println("Hockey Player Info:");
+        hp.displayInfo();
+
+        scanner.close();
+    }
+}
+
+

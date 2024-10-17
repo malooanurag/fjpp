@@ -1,0 +1,58 @@
+package p1;
+
+import java.util.Scanner;
+
+class Rectangle {
+    private double width;
+    private double length;
+    private String colour;
+
+    public Rectangle(double width, double length, String colour) {
+        this.width = width;
+        this.length = length;
+        this.colour = colour;
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public double findArea() {
+        return width * length;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter width, length, and colour for Rectangle 1:");
+        double width1 = scanner.nextDouble();
+        double length1 = scanner.nextDouble();
+        String colour1 = scanner.next();
+
+        Rectangle rect1 = new Rectangle(width1, length1, colour1);
+
+        System.out.println("Enter width, length, and colour for Rectangle 2:");
+        double width2 = scanner.nextDouble();
+        double length2 = scanner.nextDouble();
+        String colour2 = scanner.next();
+
+        Rectangle rect2 = new Rectangle(width2, length2, colour2);
+
+        if (rect1.findArea() == rect2.findArea() && rect1.getColour().equals(rect2.getColour())) {
+            System.out.println("Matching Rectangles");
+        } else {
+            System.out.println("Non-matching Rectangles");
+        }
+
+        scanner.close();
+    }
+}
+

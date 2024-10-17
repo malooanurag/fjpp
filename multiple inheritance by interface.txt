@@ -1,0 +1,85 @@
+package p1;
+
+//Interface for vehicle functionalities
+interface Vehicle {
+ void start();
+ void stop();
+}
+
+//Interface for engine functionalities
+interface Engine {
+ void rev();
+}
+
+//Class implementing multiple interfaces
+class Car implements Vehicle, Engine {
+ private String brand;
+ private String model;
+
+ // Constructor
+ public Car(String brand, String model) {
+     this.brand = brand;
+     this.model = model;
+ }
+
+ // Implementing the start method from Vehicle interface
+ public void start() {
+     System.out.println(brand + " " + model + " is starting.");
+ }
+
+ // Implementing the stop method from Vehicle interface
+ public void stop() {
+     System.out.println(brand + " " + model + " is stopping.");
+ }
+
+ // Implementing the rev method from Engine interface
+ public void rev() {
+     System.out.println(brand + " " + model + " engine is revving.");
+ }
+}
+
+//Another class implementing multiple interfaces
+class Motorcycle implements Vehicle, Engine {
+ private String brand;
+ private String model;
+
+ // Constructor
+ public Motorcycle(String brand, String model) {
+     this.brand = brand;
+     this.model = model;
+ }
+
+ // Implementing the start method from Vehicle interface
+ public void start() {
+     System.out.println(brand + " " + model + " is starting.");
+ }
+
+ // Implementing the stop method from Vehicle interface
+ public void stop() {
+     System.out.println(brand + " " + model + " is stopping.");
+ }
+
+ // Implementing the rev method from Engine interface
+ public void rev() {
+     System.out.println(brand + " " + model + " engine is revving.");
+ }
+}
+
+public class VehicleTest {
+ public static void main(String[] args) {
+     Car car = new Car("Toyota", "Camry");
+     Motorcycle motorcycle = new Motorcycle("Yamaha", "MT-07");
+
+     System.out.println("Car Info:");
+     car.start();
+     car.rev();
+     car.stop();
+     System.out.println();
+
+     System.out.println("Motorcycle Info:");
+     motorcycle.start();
+     motorcycle.rev();
+     motorcycle.stop();
+ }
+}
+

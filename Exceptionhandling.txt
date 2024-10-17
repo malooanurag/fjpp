@@ -1,0 +1,36 @@
+package p1;
+
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Exceptionhandling {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int numerator = 0;
+        int denominator = 0;
+        
+        try {
+            // Taking user input for numerator and denominator
+            System.out.print("Enter the numerator: ");
+            numerator = scanner.nextInt();
+            System.out.print("Enter the denominator: ");
+            denominator = scanner.nextInt();
+            
+            // Performing division
+            int result = numerator / denominator;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            // Handling division by zero
+            System.out.println("Error: Division by zero is not allowed.");
+        } catch (InputMismatchException e) {
+            // Handling invalid input (non-integer)
+            System.out.println("Error: Please enter valid integers.");
+        } finally {
+            // Closing the scanner
+            scanner.close();
+            System.out.println("Scanner closed.");
+        }
+    }
+}
+

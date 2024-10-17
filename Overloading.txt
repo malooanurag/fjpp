@@ -1,0 +1,72 @@
+package p1;
+
+class Overloading {
+    private double num1;
+    private double num2;
+
+    // Constructor Overloading
+
+    // Default constructor
+    public Overloading() {
+        this.num1 = 0;
+        this.num2 = 0;
+    }
+
+    // Constructor with one parameter
+    public Overloading(double num1) {
+        this.num1 = num1;
+        this.num2 = 0;
+    }
+
+    // Constructor with two parameters
+    public Overloading(double num1, double num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    // Method Overloading
+
+    // Method to add two numbers
+    public double add() {
+        return num1 + num2;
+    }
+
+    // Method to add two given numbers
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    // Method to add three numbers
+    public double add(double a, double b, double c) {
+        return a + b + c;
+    }
+
+    // Method to print the values of num1 and num2
+    public void displayNumbers() {
+        System.out.println("num1: " + num1 + ", num2: " + num2);
+    }
+
+    public static void main(String[] args) {
+        // Using different constructors
+        Overloading obj1 = new Overloading(); // Default constructor
+        Overloading obj2 = new Overloading(5); // Constructor with one parameter
+        Overloading obj3 = new Overloading(4, 7); // Constructor with two parameters
+
+        // Display initial numbers
+        System.out.println("obj1:");
+        obj1.displayNumbers();
+        System.out.println("obj2:");
+        obj2.displayNumbers();
+        System.out.println("obj3:");
+        obj3.displayNumbers();
+
+        // Using method overloading
+        System.out.println("\nMethod Overloading Results:");
+        System.out.println("Adding using obj3's values (4 + 7): " + obj3.add());
+        System.out.println("Adding two numbers (8 + 2): " + obj3.add(8, 2));
+        System.out.println("Adding three numbers (3 + 5 + 7): " + obj3.add(3, 5, 7));
+    }
+}
+
+
+
